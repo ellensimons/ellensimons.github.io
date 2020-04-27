@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    grid-area: hd;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+article {
+    grid-area: main;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+    width: 450px;
+    height: 225px;
+}
+
+footer {
+    grid-area: ft;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "hd" "main" "ft";
+}
+
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: 2fr 4fr;
+        grid-template-areas: "hd hd" "main main" "ft ft";
+    }
+}
+
+.grid > * {
+    border: 1px solid rgb(35, 80, 105);
+    border-radius: 3px;
+    background-color: rgb(35, 80, 105);
+    padding: 1em 2em;
+    color: #fff;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.grid article {
+    background-color: rgb(35, 80, 105)
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0.1em;
+    padding: 0;
+}
+
+.menubar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.menubar li {
+    display: inline-block;
+    padding: 1rem;
+    width: 100px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    background: rgb(160, 150, 150); 
+    border-radius: 5px;
+}
+
+.menubar li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.menubar li:hover {
+    background: rgb(95, 95, 100);
+}
+
+.menubar li:hover a {
+    color: white;
+}
+
+.menubar li ul {
+    display:none;
+        position: absolute;
+        left: 0;
+        margin-top: 1.2rem;
+        z-index: 10;
+        width: 100px;
+}
+
+.menubar li:hover ul {
+    display: block;
+}
+
+.menubar li ul li:hover a {
+    color:  rgb(190, 215, 245);
+}
+
+.menubar li ul li {
+    padding: 0.2 rem;
+    width: 100%;
+}
